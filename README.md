@@ -1,2 +1,1 @@
-# byte
-a byte of python
+learning Python ....
