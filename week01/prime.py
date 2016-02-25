@@ -1,7 +1,8 @@
 #!/usr/bin/env python
+# Gets the number of primes in the list
 
 list1 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 29]
-# return prime number
+# Get prime function .
 def get_num(n):
     count = False
     for x in range(2,n-1):
@@ -10,7 +11,7 @@ def get_num(n):
             break
     if not count:
         return n
-# count prime
+# Count prime
 new_list = []
 for i in list1:
     num = get_num(i)
