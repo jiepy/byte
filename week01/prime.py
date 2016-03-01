@@ -11,6 +11,7 @@ def get_num(n):
             break
     if not count:
         return n
+
 # Count prime
 new_list = []
 for i in list1:
