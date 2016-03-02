@@ -6,16 +6,16 @@
 
 
 def echo1(x, y):
-	"""
+    """
 	A function of position Parameter Description
 	Args:
 		x (int):number
 		y (int):number
 		return x + y
 	"""
-	print('x = {0}'.format(x))
-	print('y = {0}'.format(y))
-	return x + y
+    print('x = {0}'.format(x))
+    print('y = {0}'.format(y))
+    return x + y
 
 
 # res1 = echo1(2, 6)
@@ -44,22 +44,22 @@ def echo1(x, y):
 
 
 def sumn(list1):
-	res = 0
-	for x in list1:
-		res += x
-		print(x)
-	print(res)
+    res = 0
+    for x in list1:
+        res += x
+        print(x)
+    print(res)
 
 
 # sumn([1, 2, 3, 4])
 # sumn([4, 3, 2, 1])
 
 def func_change(*args):
-	res = 0
-	print(args)
-	for x in args:
-		res += x
-	print(res)
+    res = 0
+    print(args)
+    for x in args:
+        res += x
+    print(res)
 
 
 # func_change(1, 2, 3, 4, 5)
@@ -71,7 +71,7 @@ def func_change(*args):
 
 
 def func_default(x, y=10):
-	print('x/y is {0}/{1}'.format(x, y))
+    print('x/y is {0}/{1}'.format(x, y))
 
 
 # func_default(20)
@@ -82,8 +82,8 @@ def func_default(x, y=10):
 
 
 def print_args(**kwargs):
-	for k, v in kwargs.items():
-		print('key: {0} ===> value : {1}'.format(k, v))
+    for k, v in kwargs.items():
+        print('key: {0} ===> value : {1}'.format(k, v))
 
 
 # print_args(x=100, y=200, z=300)
@@ -92,22 +92,22 @@ def print_args(**kwargs):
 
 
 def print_all(*args, **kwargs):
-	for x in args:
-		print('POS:{0}'.format(x))
-	for k, v in kwargs.items():
-		print('Key: {0} ==> Valus: {1}'.format(k, v))
+    for x in args:
+        print('POS:{0}'.format(x))
+    for k, v in kwargs.items():
+        print('Key: {0} ==> Valus: {1}'.format(k, v))
 
 
 # print_all(1, 2, 3, a=4, b=5)
 
 
 def print_he(x, y, *args, **kwargs):
-	print('x = {0}'.format(x))
-	print('y = {0}'.format(y))
-	for i in args:
-		print('args: x = {0}'.format(i))
-	for k, v in kwargs.items():
-		print('{0} => {1}'.format(k, v))
+    print('x = {0}'.format(x))
+    print('y = {0}'.format(y))
+    for i in args:
+        print('args: x = {0}'.format(i))
+    for k, v in kwargs.items():
+        print('{0} => {1}'.format(k, v))
 
 
 # print_he([1,2,3],4, 5,6,7, kk =5)
@@ -120,9 +120,9 @@ def print_he(x, y, *args, **kwargs):
 
 
 def add(x, y):
-	print('x is {0}'.format(x))
-	print('y is {0}'.format(y))
-	print('Count x + y = {0}'.format(x + y))
+    print('x is {0}'.format(x))
+    print('y is {0}'.format(y))
+    print('Count x + y = {0}'.format(x + y))
 
 
 # lst = [1, 2]
@@ -133,8 +133,8 @@ def add(x, y):
 
 
 def func_dict(**kwargs):
-	for k, v in kwargs.items():
-		print('Key: {0} --> {1}'.format(k, v))
+    for k, v in kwargs.items():
+        print('Key: {0} --> {1}'.format(k, v))
 
 
 # dict1 = {'a':1, 'b':2, 'c':3}
@@ -144,8 +144,8 @@ def func_dict(**kwargs):
 
 
 def fn(lst=[]):
-	lst.append(1)
-	print(lst)
+    lst.append(1)
+    print(lst)
 
 
 # fn()
@@ -165,7 +165,7 @@ def fn(lst=[]):
 
 
 def fn1(lst=None):
-	if lst is None:
-		lst = []
-	lst.append(1)
-	print(lst)
+    if lst is None:
+        lst = []
+    lst.append(1)
+    print(lst)
