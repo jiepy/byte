@@ -6,13 +6,6 @@
 
 
 def echo1(x, y):
-    """
-	A function of position Parameter Description
-	Args:
-		x (int):number
-		y (int):number
-		return x + y
-	"""
     print('x = {0}'.format(x))
     print('y = {0}'.format(y))
     return x + y
