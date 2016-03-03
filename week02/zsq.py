@@ -1,15 +1,8 @@
-def heidong(fn):
-    def warp(*args, **kwargs):
-        print('start -----')
-        fn()
-        print('stop -----')
-
-    return warp
+def inc(x):
+	return x + 1
 
 
-@heidong
-def do_smt():
-    print('run run run')
+list1 = map(inc, [1, 2, 3, 4])
 
-
-do_smt()
+for i in list1:
+	print(i)

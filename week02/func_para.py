@@ -91,7 +91,7 @@ def print_all(*args, **kwargs):
         print('Key: {0} ==> Valus: {1}'.format(k, v))
 
 
-# print_all(1, 2, 3, a=4, b=5)
+print_all(1, 2, 3, a=4, b=5)
 
 
 def print_he(x, y, *args, **kwargs):
