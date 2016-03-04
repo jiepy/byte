@@ -1,8 +1,21 @@
-def inc(x):
-	return x + 1
+def say_hi(fn):
+	def improve():
+		print("Welcome from decorator: ")
+		fn()
+	return improve
+
+@say_hi
+def hi():
+	print("hi there in hi function")
+
+# hi()
+
+def add(x, y):
+	return x+y
 
 
-list1 = map(inc, [1, 2, 3, 4])
+a=add(5, 6)
 
-for i in list1:
-	print(i)
+print(a)
+
+

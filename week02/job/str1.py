@@ -1,12 +1,18 @@
 #!/usr/bin/env python
 
-str = '12345'
+
+def get_sum(*args):
+	res = 0
+	for i in args:
+		res += i
+	return res
+
+lista = [1, 2, 3, 4, 5]
+
+reb = (get_sum(*lista))
+
+while reb < 10
 
 
 
-def getnum(x):
-    ret = 0
-    for i in range(len(x)):
-        num = int(str[i])
-        ret += num
-    return ret
+
