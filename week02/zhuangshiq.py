@@ -4,13 +4,14 @@ import time
 def timeit(fn):
 	def warp(*args, **kwargs):
 		print('----start------')
-		ret=fn(*args, **kwargs)
+		ret = fn(*args, **kwargs)
 		print('----stop--------')
 		return ret
+
 	return warp
 
 
-#@timeit
+# @timeit
 def hi(*args, **kwargs):
 	for i in args:
 		print('* {0}'.format(i))
@@ -22,10 +23,11 @@ def hi(*args, **kwargs):
 def add(x, y):
 	return x + y
 
-a=add(5, 6)
+
+a = add(5, 6)
 
 print(a)
-#timeit(hi)('a', 'b', 'c', name='topic', email='topic@outlook.com')
+# timeit(hi)('a', 'b', 'c', name='topic', email='topic@outlook.com')
 
 
 
