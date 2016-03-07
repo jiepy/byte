@@ -1,21 +1,21 @@
-def say_hi(fn):
-	def improve():
-		print("Welcome from decorator: ")
-		fn()
-	return improve
+def firsh_hi(user='Jie'):
+	def say_hi(fn):
+		def improve(*args):
+			print('-' * 40)
+			if 'user' not in args:
+				print('no have args')
+				print('use default_user: {0}'.format(user))
+			return fn(*args)
+		return improve
+	return say_hi
 
-@say_hi
-def hi():
-	print("hi there in hi function")
+# @firsh_hi()
+def hi(*args):
 
-# hi()
-
-def add(x, y):
-	return x+y
-
-
-a=add(5, 6)
-
-print(a)
+	for i in args:
+		print(i)
+	print("End of hi function")
 
 
+firsh_hi()(hi)('a', 'b', 'c')
+#hi('a', 'b', 'c')

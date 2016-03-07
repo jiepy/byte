@@ -12,3 +12,4 @@ def find(*origin, items=[3, 4]):
 
 lista = [2, 3, 5, 3, 4, 2, 7, 4]
 find(*lista)
+
