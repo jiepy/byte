@@ -11,10 +11,11 @@ def firsh_hi(user='Jie'):
 
 # @firsh_hi()
 def hi(*args):
+	print(args)
 
-	for i in args:
-		print(i)
-	print("End of hi function")
+	# for i in args:
+	# 	print(i)
+	# print("End of hi function")
 
 
 firsh_hi()(hi)('a', 'b', 'c')
