@@ -16,9 +16,9 @@ import smtplib
 SMTP_HOST = 'smtp.163.com'
 SMTP_PORT = '25'
 # 定义发件人，密码，收件人
-MAIL_USER = 'monitor_jie@163.com'
-PASSWD = 'admin@123'
-MAIL_TO = 'baiyaozi@7lk.com'
+MAIL_USER = 'xxxxxx@163.com'
+PASSWD = 'xxxxxx'
+MAIL_TO = 'xxxxxx@xxx.com'
 # 定义邮件主题，内容
 MAIL_SUB = '测试邮件'
 MAIL_CON = '''
