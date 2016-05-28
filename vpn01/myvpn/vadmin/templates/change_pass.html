@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% load staticfiles %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>VPN管理</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/bootstrapValidator.min.css' %}"/>
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrapValidator.min.js' %}"></script>
+    <script>
+        $.ajaxSetup({ data: {csrfmiddlewaretoken: '{{ csrf_token }}' }, });
+    </script>
+	<style type="text/css">
+		.myfooter{
+			padding-top:20px;
+			padding-bottom: 20px;
+			margin-top:20px;
+			color:#767676;
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#change_password').bootstrapValidator({
+				message: '输入无效',
+				feedbackIcons: {
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'
+				},
+				fields: {
+					oldpassword: {
+						validators: {
+							notEmpty: {
+								message: '密码是必须的并且不能为空'
+							},
+						}
+					},
+					password: {
+						validators: {
+							notEmpty: {
+								message: '新密码是必须的并且不能为空'
+							},
+							identical: {
+								field: 'confirmPassword',
+								message: '两次密码输入不相同'
+							},
+						}
+					},
+					confirmPassword: {
+						validators: {
+							notEmpty: {
+								message: '确认密码是必须的并且不能为空'
+							},
+							identical: {
+								field: 'password',
+								message: '两次密码输入不相同'
+							},
+						}
+					},
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="vpnheader">
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<img src="{% static 'images/logo-login.png' %}" style="width:75px;margin-top: 2px;">
+				</div>
+				<div class="collapse navbar-collapse">
+					<div class="nav navbar-nav">
+						<li><p class="navbar-text">欢迎登录</p></li>
+						<li><a href="http://192.168.214.88">退出</a></li>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+		<div class="jumbotron">
+			<p>您的账号信息:</p>
+		</div>
+		<div class="row container">
+			<div class="col-md-6"><img src="{% static 'images/vpnlogo.png' %}"></div>
+			<div class="col-md-6">
+				<div id="msg" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+					<div class="modal-dialog modal-sm" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+								<span>aaa</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form id="change_password" method="post" class="form-horizontal" action="mod/user">{% csrf_token %}
+					<div class="form-group">
+						<div class="col-lg-5">
+							<input type="password" class="form-control" name="oldpassword" placeholder="旧密码" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-5">
+							<input type="password" class="form-control" name="password" placeholder="新密码" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-5">
+							<input type="password" class="form-control" name="confirmPassword" placeholder="确认密码"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-md-offset-1">
+								<button type="submit" class="mybtn btn btn-default" name="signup" value="1">提&nbsp交</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="myfooter navbar-fixed-bottom">
+		<p>&copy 2016 VPN Admin</p>
+	</div>
+	<script src="{% static 'js/myjs.js' %}"></script>
+</body>
+</html>
